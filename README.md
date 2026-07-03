@@ -83,6 +83,58 @@ README.md
 - Solar Power Support
 - Camera Integration
 
+  ## Working Principle
+
+The Borewell Safety Alert System works as follows:
+
+1. **System Start**
+   - The system starts when the power supply is switched on.
+
+2. **Power Initialization**
+   - NodeMCU, GPS module, GSM module, and buzzer are powered and initialized.
+
+3. **GPS Initialization**
+   - The GPS module acquires satellite signals and starts providing real-time latitude and longitude coordinates.
+
+4. **GSM Initialization**
+   - The GSM module connects to the cellular network and prepares to send SMS alerts.
+
+5. **Load Geo-Fence**
+   - The predefined safe-zone coordinates and radius are loaded into the NodeMCU.
+
+6. **Location Monitoring**
+   - The system continuously reads the current GPS location.
+
+7. **Geo-Fence Check**
+   - The current location is compared with the predefined geo-fence.
+
+8. **Inside Safe Zone**
+   - If the child is within the safe boundary, the system continues monitoring.
+
+9. **Outside Safe Zone**
+   - If the child crosses the geo-fence, the system detects a danger condition.
+
+10. **Activate Alarm**
+    - The buzzer is activated to warn nearby people.
+
+11. **Send SMS Alert**
+    - The GSM module sends an SMS containing the child's live GPS location to the registered guardian.
+
+12. **Wait and Monitor**
+    - The system waits for 30 seconds before checking again to avoid repeated alerts.
+
+13. **Panic Button Monitoring**
+    - The panic button is continuously monitored.
+
+14. **Emergency Mode**
+    - If the panic button is pressed, the system immediately enters emergency mode.
+
+15. **Emergency SMS**
+    - An emergency SMS with the current GPS location is sent instantly.
+
+16. **Continuous Alert**
+    - The buzzer remains active until the emergency condition is resolved.
+
 ---
 
 ## Author
